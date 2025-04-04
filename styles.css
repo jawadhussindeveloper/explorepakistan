@@ -1,0 +1,125 @@
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow-x: hidden;
+}
+    header {
+    background: rgb(1, 69, 1); 
+    color: white;
+    padding: 15px 0;
+    filter: brightness(80%); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+} 
+nav ul li {
+    margin: 0;
+} 
+nav ul li a {
+    color: white;
+    font-size: 20PX;
+    text-decoration: none;
+    margin-top: 1em;
+    display: inline-block;
+    font-weight: bold;
+    padding: .5em;
+    margin-left: -.5em;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+
+    &:before, &:after {
+        position: absolute;
+        content: '';
+        border-bottom: 3px solid white;
+        border-radius: 1em;
+        bottom: .3em;
+        transition: transform .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+
+    &:before {
+        width: 1em;
+        transform-origin: left;
+    }
+
+    &:after {
+        width: 82%;
+        left: 1em;
+        transform: translateX(110%);
+    }
+
+    &:hover:before {
+        transform: scaleX(0.3);
+    }
+
+    &:hover:after {
+        transform: translateX(0);
+    }
+
+} 
+.hero {
+    position: relative; 
+    text-align: center; 
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+} 
+.hero img {
+    width: 100%;
+    height: auto;
+    /* display: flex; */
+    filter: brightness(100%);
+} 
+.hero h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:rgba(0, 128, 0, 0.7);
+    color: white;
+    font-weight: bolder;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: medium;
+    max-width: 90%;
+    text-align: center;
+} 
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: rgb(182, 238, 182);
+    color: black;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+} 
+@media (max-width: 100%) {
+    nav ul {
+        flex-direction: column; 
+        align-items: center;
+    } 
+    .hero h2 { 
+    font-size: 18px; 
+    padding: 8px 15px; 
+    } 
+} 
+    @media (min-width: 100%) {
+.hero h2 {
+        font-size: 30px; 
+        padding: 12px 20px;
+    }
+} 
